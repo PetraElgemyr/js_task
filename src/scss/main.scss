@@ -16,6 +16,19 @@ body {
     margin-bottom: 10px;
   }
 
+  section {
+    display: flex;
+    flex-direction: row;
+
+    div {
+      width: 45vw;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
   #myList,
   #removedItemsList {
     // background-color: cadetblue;
@@ -27,7 +40,7 @@ body {
     .myTodoItem {
       margin: 2%;
       background-color: rgba(129, 129, 167, 0.903);
-      width: 40vw;
+      width: 25vw;
       border-radius: 5px;
       display: flex;
       flex-direction: row;
@@ -74,7 +87,7 @@ body {
   .deletedLi {
     margin: 2%;
     background-color: rgba(145, 122, 146, 0.903);
-    width: 40vw;
+    width: 25vw;
     border-radius: 5px;
     display: flex;
     flex-direction: row;

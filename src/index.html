@@ -10,20 +10,27 @@
   </head>
   <body>
     <div id="myContainer">
-      <h1>En todo-lista!</h1>
+      <h1>Gör en todo-lista!</h1>
       <span>Klicka på en punkt för att markera den som klar.</span>
-      <span>Klicka på krysset för att ta bort punkten från listan</span>
+      <span
+        >Checka av punkten med checkboxen för att ta bort punkten från
+        listan</span
+      >
       <span>Nedan kan du lägga till egna todos!</span>
       <form>
-        <input type="text" id="newItem" placeholder="Ny todo" />
+        <input type="text" id="newItem" placeholder="Skriv något här!" />
         <button type="button" id="addItemBtn">Lägg till</button>
       </form>
-
-      <ul id="myList"></ul>
-
-      <ul id="removedItemsList">
-        <h3>Borttagna todos:</h3>
-      </ul>
+      <section>
+        <div>
+          <h3>Att göra:</h3>
+          <ul id="myList"></ul>
+        </div>
+        <div>
+          <h3>Borttagna todos:</h3>
+          <ul id="removedItemsList"></ul>
+        </div>
+      </section>
     </div>
   </body>
 </html>

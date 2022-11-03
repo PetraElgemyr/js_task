@@ -4,3 +4,6 @@ class Todo {
     this.finished = finished;
   }
 }
+
+let unfinishedTodoList = [];
+let finishedList = [];

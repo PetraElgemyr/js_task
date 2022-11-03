@@ -23,11 +23,18 @@ function addItemToList() {
   let addItemBtn = document.getElementById("addItemBtn");
   addItemBtn.addEventListener("click", () => {
     let givenInputValue = document.getElementById("newItem").value;
-    showMyTodos(document.getElementById("newItem").value);
-    let inputList = new Todo(givenInputValue, false, false);
-    todoList.push(inputList);
-    showMyTodos();
-    document.getElementById("newItem").value = "";
+
+    if (givenInputValue !== "") {
+      showMyTodos(document.getElementById("newItem").value);
+      let inputList = new Todo(givenInputValue, false, false);
+      todoList.push(inputList);
+      showMyTodos();
+      document.getElementById("newItem").value = "";
+    } else {
+      alert(
+        "Du måste ha skriva något i textrutan innan du klickar på knappen!"
+      );
+    }
   });
 }
 
@@ -72,29 +79,6 @@ function showMyTodos() {
     });
   }
 }
-
-// checkbox.addEventListener("change", () => {
-//     if (checkbox.checked) {
-//       totalTodoList[i].finished = true;
-//       myLiTag.classList.toggle("__checked");
-//       console.log(
-//         "Todon ",
-//         totalTodoList[i].item,
-//         " är klar: ",
-//         totalTodoList[i].finished
-//       );
-//     } else {
-//       if (!checkbox.checked) {
-//         totalTodoList[i].finished = false;
-//         console.log(
-//           "Todon ",
-//           totalTodoList[i].item,
-//           " är klar: ",
-//           totalTodoList[i].finished
-//         );
-//         myLiTag.className = "myTodoItem";
-//       }
-//     }
 
 function checkingCheckbox(myLiTag, clickedObject, checkbox, mySpan) {
   if (checkbox.checked) {
@@ -150,7 +134,7 @@ function checkingCheckbox(myLiTag, clickedObject, checkbox, mySpan) {
       if (clickedObject.removed === true) {
         //    let changing = (clickedObject.removed = false)
         removedTodoList.push(clickedObject);
-        // console.log
+        console.log("Här är listan med borttagna todos: ", removedTodoList);
       }
     }
   }
