@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todolista</title>
+    <link rel="stylesheet" href="scss/main.scss" />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div id="myContainer">
+      <h1>En todo-lista!</h1>
+      <span>Klicka på en punkt för att markera den som klar.</span>
+      <span>Klicka på krysset för att ta bort punkten från listan</span>
+      <span>Nedan kan du lägga till egna todos!</span>
+      <form>
+        <input type="text" id="newItem" placeholder="Ny todo" />
+        <button type="button" id="addItemBtn">Lägg till</button>
+      </form>
+
+      <ul id="myList"></ul>
+
+      <ul id="removedItemsList">
+        <h2>Borttagna todos:</h2>
+      </ul>
+    </div>
+  </body>
+</html>
