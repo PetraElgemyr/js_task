@@ -25,48 +25,85 @@ body {
     align-items: center;
 
     .myTodoItem {
-      margin: 1%;
-      padding: 2%;
+      margin: 2%;
       background-color: rgba(129, 129, 167, 0.903);
-      width: 60vw;
+      width: 40vw;
       border-radius: 5px;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
+      justify-content: center;
+      align-items: center;
       list-style: none;
-      cursor: pointer;
-      &:hover {
-        background-color: rgba(141, 141, 174, 0.701);
+
+      .todo__span {
+        background-color: rgba(111, 111, 147, 0.903);
+        border-radius: 5px;
+        margin: 3%;
+        padding: 4%;
+
+        cursor: pointer;
+        &:hover {
+          background-color: rgba(141, 141, 174, 0.701);
+        }
+      }
+
+      .checkbox {
+        &:hover {
+          cursor: pointer;
+        }
       }
     }
 
     .__checked {
       color: rgba(54, 54, 54, 0.897);
       background-color: rgba(141, 141, 174, 0.701);
-
       text-decoration: line-through;
     }
 
-    .removeBtn {
-      cursor: pointer;
-      border: none;
-      border-radius: 5px;
-      &:hover {
-        background-color: rgb(87, 39, 39);
-        color: white;
-      }
-    }
+    // .removeBtn {
+    //   cursor: pointer;
+    //   border: none;
+    //   border-radius: 5px;
+    //   &:hover {
+    //     background-color: rgb(87, 39, 39);
+    //     color: white;
+    //   }
+    // }
   }
 
   .deletedLi {
-    margin: 1%;
-    padding: 2%;
-    background-color: rgba(147, 116, 146, 0.903);
-    width: 60vw;
+    margin: 2%;
+    background-color: rgba(145, 122, 146, 0.903);
+    width: 40vw;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
     list-style: none;
+  }
+  .deletedSpan {
+    border-radius: 5px;
+    margin: 3%;
+    padding: 4%;
+    background-color: rgba(121, 94, 120, 0.903);
+    &:hover {
+      cursor: pointer;
+      background-color: rgba(160, 135, 160, 0.903);
+    }
+    // &:hover {
+    //   background-color: rgba(135, 115, 135, 0.903);
+    // }
+  }
+
+  .checkbox__rem {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .__removed {
+    background-color: rgba(160, 135, 160, 0.903);
+    text-decoration: line-through;
   }
 }
