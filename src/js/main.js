@@ -1,10 +1,4 @@
-class Todo {
-  constructor(name, finished, removed) {
-    this.name = name;
-    this.finished = finished;
-    this.removed = removed;
-  }
-}
+import { Todo } from "./models/todo";
 
 window.onload = function () {
   addItemToList();
@@ -20,8 +14,6 @@ let todoList = [
 ];
 
 function addItemToList() {
-  //Fixa localStorage så att lista inte försvinner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
   let addItemBtn = document.getElementById("addItemBtn");
   addItemBtn.addEventListener("click", () => {
     let givenInputValue = document.getElementById("newItem").value;
@@ -30,6 +22,7 @@ function addItemToList() {
       //om inputrutan innehåller något
       let inputList = new Todo(givenInputValue, false, false); //skapa nytt objekt. Texten i textrutan ska bli name till objektet
       todoList.push(inputList); //lägg till det inputskapade objektet i vanliga todo-listan
+
       showMyTodos(); //kör vanliga funktion där allt loopas och skrivs ut
       document.getElementById("newItem").value = ""; //töm textruta
     } else {
@@ -109,7 +102,8 @@ function checkingCheckbox(myLiTag, clickedObject, checkbox, mySpan) {
       removedLi.className = "deletedLi";
       checkboxForRemoved.type = "checkbox";
       checkboxForRemoved.className = "checkbox__rem";
-
+      removedTodoList.push(clickedObject); //om removed=true ska de ligga i borttagna-listan
+      console.log("Här är listan med borttagna todos: ", removedTodoList);
       if (clickedObject.finished === true) {
         removedLi.classList.toggle(
           "__removed"
@@ -151,11 +145,6 @@ function checkingCheckbox(myLiTag, clickedObject, checkbox, mySpan) {
           mySpan
         );
       });
-      if (clickedObject.removed === true) {
-        //    let changing = (clickedObject.removed = false)
-        removedTodoList.push(clickedObject); //om removed=true ska de ligga i borttagna-listan
-        console.log("Här är listan med borttagna todos: ", removedTodoList);
-      }
     }
   }
 }
@@ -170,6 +159,10 @@ function reverse(
 ) {
   console.log("Nu flyttas ", clickedObject, " tillbaka till todoList");
   todoList.push(clickedObject); //todo-listan får tillbaka objektet men sist i listan
+
+  let index = removedTodoList.indexOf(clickedObject);
+  console.log("index för ", clickedObject, " är ", index); //ta bort från removed listan
+  removedTodoList.splice(index, 1);
   removedLi.innerHTML = ""; //töm li-tagen i removedlistan
   checkboxForRemoved.remove(); //tar bort checkbox för removed objekt
   removedLi.remove(); //ta bort li-tagen i borttagna-listan
@@ -183,6 +176,7 @@ function reverse(
   let myUlTag = document.getElementById("myList");
   myUlTag.appendChild(myLiTag);
   console.log("min uppdaterade todo-list: ", todoList);
+  console.log("min uppdaterade removed-list: ", removedTodoList);
 }
 
 // function markAsFinished(theObject, myLiTag, removedLi) { //om man klickat på span-tagen

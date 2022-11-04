@@ -30,6 +30,11 @@ body {
       border: none;
       border-radius: 5px;
       padding: 2%;
+
+      &:hover {
+        background-color: rgb(86, 109, 86);
+        color: white;
+      }
     }
   }
 
