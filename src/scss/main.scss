@@ -20,6 +20,12 @@ body {
     display: flex;
     flex-direction: row;
 
+    #newItem {
+      border-radius: 5px;
+      border: none;
+      margin: 2%;
+    }
+
     #addItemBtn {
       border: none;
       border-radius: 5px;

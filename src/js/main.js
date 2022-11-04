@@ -20,6 +20,8 @@ let todoList = [
 ];
 
 function addItemToList() {
+  //Fixa localStorage så att lista inte försvinner!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
   let addItemBtn = document.getElementById("addItemBtn");
   addItemBtn.addEventListener("click", () => {
     let givenInputValue = document.getElementById("newItem").value;
